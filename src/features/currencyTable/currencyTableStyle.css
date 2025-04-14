@@ -1,0 +1,17 @@
+.tableContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.custom-table {
+  width: 80%;
+}
+
+.custom-row {
+  height: 25px !important;
+}
+
+.custom-row .ant-table-cell {
+  padding: 2px 4px !important;
+}
