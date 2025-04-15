@@ -1,5 +1,6 @@
 export type CurrencyType = {
     key: string
+    id: string
     rank: number
     symbol: string
     name: string

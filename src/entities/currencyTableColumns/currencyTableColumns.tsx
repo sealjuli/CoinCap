@@ -1,6 +1,6 @@
-import { TableProps, Button } from 'antd'
-import { PlusCircle } from 'lucide-react'
+import { TableProps } from 'antd'
 import { CurrencyType } from '../../shared/types/currencyTypes'
+import { AddButton } from '../../features/addButton/addButton'
 
 export const columns: TableProps<CurrencyType>['columns'] = [
   {
@@ -30,8 +30,6 @@ export const columns: TableProps<CurrencyType>['columns'] = [
     dataIndex: 'changeValue24Hr',
     key: 'changeValue24Hr',
     render: (_, record) => {
-      console.log('priceUsd ' + record.priceUsd)
-      console.log('changePercent24Hr' + record.changePercent24Hr)
       const value = (+record.priceUsd * +record.changePercent24Hr) / 100
       const color = value > 0 ? 'green' : 'red'
       return <p style={{ color }}> {`${value.toFixed(2)} $`}</p>
@@ -52,10 +50,6 @@ export const columns: TableProps<CurrencyType>['columns'] = [
   {
     title: '',
     key: 'add',
-    render: () => (
-      <Button>
-        <PlusCircle />
-      </Button>
-    ),
+    render: (_, record) => <AddButton record={record} />,
   },
 ]

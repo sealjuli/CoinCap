@@ -1,6 +1,7 @@
-export const coinCapRoutes = {
-    root: 'CoinCap',
-    assets: 'Assets'
+export const coincapRoutes = {
+    root: 'coincap',
+    assets: 'assets',
+    currency: 'currency'
 } as const;
 
-export type RoutesType = (typeof coinCapRoutes)[keyof typeof coinCapRoutes];
+export type RoutesType = (typeof coincapRoutes)[keyof typeof coincapRoutes];

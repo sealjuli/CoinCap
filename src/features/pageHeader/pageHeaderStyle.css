@@ -7,19 +7,3 @@
   justify-content: space-between;
   margin-bottom: 10px;
 }
-
-.walletContainer {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.popularContainer {
-  display: flex;
-  flex-direction: column;
-  margin: 0px 0px 16px 0px;
-}
-
-.popularInfo {
-  display: flex;
-}
