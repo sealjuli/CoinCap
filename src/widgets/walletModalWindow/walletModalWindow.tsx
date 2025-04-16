@@ -1,21 +1,19 @@
 import { JSX } from 'react'
-import { Modal, Button } from 'antd'
+import { Modal } from 'antd'
+import { WalletTable } from '../walletTable/walletTable'
+import { useAppDispatch, useAppSelector } from '../../shared/hooks/hooks'
+import { selectWalletPrice } from '../../shared/redux/slices/walletSlice'
+import { OkButton } from '../../features/okButton/okButton'
 import {
   selectShowWalletWindow,
   changeShowWalletWindow,
 } from '../../shared/redux/slices/walletSlice'
-import { WalletTable } from '../walletTable/walletTable'
-import { useAppDispatch, useAppSelector } from '../../shared/hooks/hooks'
-import { selectWalletPrice } from '../../shared/redux/slices/walletSlice'
+import './walletModalWindowStyle.css'
 
 export const WalletModalWindow = (): JSX.Element => {
   const dispatch = useAppDispatch()
   const isModalOpen = useAppSelector(selectShowWalletWindow)
   const walletPrice = useAppSelector(selectWalletPrice)
-
-  const handleOk = () => {
-    dispatch(changeShowWalletWindow())
-  }
 
   const handleCancel = () => {
     dispatch(changeShowWalletWindow())
@@ -23,21 +21,14 @@ export const WalletModalWindow = (): JSX.Element => {
 
   return (
     <Modal
-      style={{ textAlign: 'center' }}
+      className="modal"
       title={<h2>Портфель</h2>}
       open={isModalOpen}
-      footer={
-        <Button type="primary" onClick={handleOk}>
-          OK
-        </Button>
-      }
+      footer={<OkButton />}
       onCancel={handleCancel}
-      width={800}
     >
-      <div>
-        <WalletTable />
-        <p>{`Итого: ${walletPrice.toFixed(2)} $`}</p>
-      </div>
+      <WalletTable />
+      <p>{`Итого: ${walletPrice.toFixed(2)} $`}</p>
     </Modal>
   )
 }

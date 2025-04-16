@@ -5,6 +5,7 @@ import { StorageItem } from '../../shared/types/storageTypes'
 import { useAppDispatch, useAppSelector } from '../../shared/hooks/hooks'
 import { setWalletPrice } from '../../shared/redux/slices/walletSlice'
 import { selectCurrenciesArray } from '../../shared/redux/slices/currenciesSlice'
+import './deleteButtonStyle.css'
 
 type PropsType = {
   record: WalletColumnType
@@ -28,10 +29,5 @@ export const DeleteButton = ({ record }: PropsType): JSX.Element => {
     dispatch(setWalletPrice(currencies))
   }
 
-  return (
-    <X
-      style={{ cursor: 'pointer' }}
-      onClick={(event) => deleteCurrency(event, record)}
-    />
-  )
+  return <X className="x" onClick={(event) => deleteCurrency(event, record)} />
 }

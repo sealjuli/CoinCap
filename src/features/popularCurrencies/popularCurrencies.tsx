@@ -1,8 +1,8 @@
 import { JSX } from 'react'
+import { Space } from 'antd'
 import { useAppSelector } from '../../shared/hooks/hooks'
 import { selectCurrenciesArray } from '../../shared/redux/slices/currenciesSlice'
 import './popularCurrenciesStyle.css'
-import { Space } from 'antd'
 
 export const PopularCurrencies = (): JSX.Element => {
   const currencies = useAppSelector(selectCurrenciesArray)

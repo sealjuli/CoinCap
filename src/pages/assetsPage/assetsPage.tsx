@@ -6,7 +6,7 @@ import { fetchGetCurrencies } from '../../shared/redux/slices/currenciesSlice'
 import { ModalWindow } from '../../widgets/modalWindow/modalWindow'
 import { WalletModalWindow } from '../../widgets/walletModalWindow/walletModalWindow'
 
-export const Assets = (): JSX.Element => {
+export const AssetsPage = (): JSX.Element => {
   const dispatch = useAppDispatch()
   useEffect(() => {
     dispatch(fetchGetCurrencies())

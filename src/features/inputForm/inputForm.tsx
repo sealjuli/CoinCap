@@ -16,7 +16,8 @@ export const InputForm = (): JSX.Element => {
 
   return (
     <InputNumber
-      placeholder="1"
+      placeholder="0.01"
+      min={0}
       value={inputValue}
       onChange={changeInputValue}
     />

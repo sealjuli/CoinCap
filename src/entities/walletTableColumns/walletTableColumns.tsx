@@ -18,7 +18,13 @@ export const columns: TableProps<WalletColumnType>['columns'] = [
     title: 'Amount',
     dataIndex: 'amount',
     key: 'amount',
-    render: (value) => value.toFixed(2),
+    render: (value) => {
+      if (value >= 1) {
+        return value.toFixed(2)
+      } else {
+        return value
+      }
+    },
   },
   {
     title: 'Total',

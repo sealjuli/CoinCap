@@ -15,6 +15,10 @@ export const CurrencyTable = (): JSX.Element => {
   const currencies = useAppSelector(selectCurrenciesArray)
   const navigate = useNavigate()
 
+  const navigateToCurrency = (id: string) => {
+    navigate(`/${coincapRoutes.root}/${coincapRoutes.currency}/${id}`)
+  }
+
   useEffect(() => {
     if (currencies.length > 0) {
       dispatch(setWalletPrice(currencies))
@@ -31,14 +35,7 @@ export const CurrencyTable = (): JSX.Element => {
           dataSource={currencies}
           rowKey="rank"
           rowClassName="custom-row"
-          onRow={(record) => {
-            return {
-              onClick: () =>
-                navigate(
-                  `/${coincapRoutes.root}/${coincapRoutes.currency}/${record.id}`
-                ),
-            }
-          }}
+          onRow={(record) => ({ onClick: () => navigateToCurrency(record.id) })}
         />
       </div>
     )

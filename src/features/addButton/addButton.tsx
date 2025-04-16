@@ -2,11 +2,11 @@ import { JSX, MouseEvent } from 'react'
 import { Button } from 'antd'
 import { PlusCircle } from 'lucide-react'
 import { CurrencyType } from '../../shared/types/currencyTypes'
+import { useAppDispatch } from '../../shared/hooks/hooks'
 import {
   changeShowWindow,
   changeWindowCurrency,
 } from '../../shared/redux/slices/modalWindowSlice'
-import { useAppDispatch } from '../../shared/hooks/hooks'
 
 type PropsType = {
   record: CurrencyType

@@ -5,6 +5,11 @@
   cursor: pointer;
 }
 
+.green,
+.red {
+  width: 150px;
+}
+
 .green {
   color: green;
 }

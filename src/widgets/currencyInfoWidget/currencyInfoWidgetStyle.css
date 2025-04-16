@@ -1,0 +1,7 @@
+.container {
+  justify-items: anchor-center;
+}
+
+.cryptoHeader {
+  display: flex;
+}
